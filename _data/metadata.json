@@ -1,0 +1,27 @@
+{
+  "title": "Julian Setiawan",
+  "url": "https://julian.setiawan.ca",
+  "domain": "setiawan.ca",
+  "description": "Julian Setiawan's personal blog",
+  "genre": "https://www.wikidata.org/wiki/Q950511",
+  "sendWebVitals": false,
+  "feed": {
+    "subtitle": "Julian Setiawan's personal blog",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://julian.setiawan.ca"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://julian.setiawan.ca/feed/feed.json"
+  },
+  "author": {
+    "name": "Julian Setiawan"
+  },
+  "cv": {
+    "email": "julian@setiawan.ca",
+    "linkedin": "https://linkedin.com/in/jsetiawan",
+    "github": "https://github.com/j-setiawan",
+    "medium": "https://medium.com/@jsetiawan"
+  }
+}

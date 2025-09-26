@@ -1,0 +1,94 @@
+---
+#layout: layouts/base.njk
+templateClass: tmpl-cv
+---
+{% extends "layouts/base.njk" %}
+
+{% block extraArticleHeader %}
+
+<ul class="social-links">
+  <li><a href="mailto:{{ metadata.cv.email }}">Email</a></li>
+  <li><a href="{{ metadata.cv.linkedin }}">Linkedin</a></li>
+  <li><a href="{{ metadata.cv.github }}">Github</a></li>
+  <li><a href="{{ metadata.cv.medium }}">Medium</a></li>
+</ul>
+{% endblock %}
+
+{% set hideHomepageUrl = true %}
+{% set shareUrl = metadata.url + page.url %}
+
+{% block article %}
+{{ content | safe }}
+
+<style>
+  /* Remove the trailing '#' from headers */
+  .direct-link {
+    display: none;
+  }
+
+  .job-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .job-title {
+    flex-grow: 1;
+  }
+
+  .job-date {
+    text-align: right;
+    padding-left: 2em;
+    padding-right: 4em;
+    white-space: nowrap;
+  }
+
+  .social-links {
+    list-style: none;
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+  }
+
+  main article h1 {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  main article h2 {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  main article h3 {
+    font-size: 24px;
+    line-height: 1;
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "image": [],
+  "author": "{{ metadata.author.name }}",
+  "genre": "{{ metadata.genre }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ metadata.publisher.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ '/img/favicon/favicon-192x192.png' | addHash }}"
+    }
+  },
+  "url": "{{ metadata.url }}{{ canonicalUrl or page.url }}",
+  "mainEntityOfPage": "{{ metadata.url }}{{ canonicalUrl or page.url }}",
+  "datePublished": "{{ page.date | htmlDateString }}",
+  "dateModified": "{{ page.inputPath | lastModifiedDate  | htmlDateString }}",
+  "description": "{{ content | striptags | truncate(140) }}"
+}
+</script>
+
+{% endblock %}

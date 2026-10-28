@@ -19,6 +19,9 @@ eleventyNavigation:
 ### Principal Software Architect
 {% endjob %}
 
+* Lead architect for Solace Agent Mesh, an enterprise AI agent platform
+  * Sandboxed tool execution and agent deployment model
+  * Role-based access control, human-in-the-loop approvals, and service-identity auth for agents
 * Design products and features across many domains with cross-cutting concerns, including:
   * Solace Cloud (Artificial Intelligence) Agent Mesh deployments and authorization
   * [Solace Schema Registry](https://solace.com/products/schema-registry/), a Java Quarkus application with a Postgres backend and a custom identity provider written in Node
